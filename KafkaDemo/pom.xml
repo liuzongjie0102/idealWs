@@ -21,5 +21,219 @@
             <version>0.10.0.1</version>
         </dependency>
     </dependencies>
-    
+
+    <!--<?xml version="1.0" encoding="UTF-8"?>-->
+    <!--<project xmlns="http://maven.apache.org/POM/4.0.0"-->
+             <!--xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+             <!--xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">-->
+        <!--<modelVersion>4.0.0</modelVersion>-->
+
+        <!--<groupId>com.example</groupId>-->
+        <!--<artifactId>websocketDemo</artifactId>-->
+        <!--<name>websocketDemo</name>-->
+        <!--<version>1.0-SNAPSHOT</version>-->
+        <!--<packaging>war</packaging>-->
+
+        <!--<dependencies>-->
+
+
+            <!--<dependency>-->
+                <!--<groupId>org.springframework</groupId>-->
+                <!--<artifactId>spring-web</artifactId>-->
+                <!--<version>4.3.13.RELEASE</version>-->
+                <!--<scope>compile</scope>-->
+            <!--</dependency>-->
+            <!--<dependency>-->
+                <!--<groupId>org.springframework</groupId>-->
+                <!--<artifactId>spring-context</artifactId>-->
+                <!--<version>4.3.13.RELEASE</version>-->
+                <!--<scope>compile</scope>-->
+            <!--</dependency>-->
+            <!--<dependency>-->
+                <!--<groupId>org.springframework</groupId>-->
+                <!--<artifactId>spring-webmvc</artifactId>-->
+                <!--<version>4.3.13.RELEASE</version>-->
+                <!--<scope>compile</scope>-->
+            <!--</dependency>-->
+        <!--</dependencies>-->
+
+
+        <!--<build>-->
+            <!--&lt;!&ndash; MAVEN工程，编译后配成像普通web工程一样，通过tomcat 相对路径启动 （开发的时候使用） &ndash;&gt;-->
+            <!--<pluginManagement>-->
+                <!--<plugins>-->
+                    <!--<plugin>-->
+                        <!--<groupId>org.apache.maven.plugins</groupId>-->
+                        <!--<artifactId>maven-archetype-plugin</artifactId>-->
+                        <!--<version>2.4</version>-->
+                    <!--</plugin>-->
+                    <!--<plugin>-->
+                        <!--<groupId>org.eclipse.m2e</groupId>-->
+                        <!--<artifactId>lifecycle-mapping</artifactId>-->
+                        <!--<version>1.0.0</version>-->
+                        <!--<configuration>-->
+                            <!--<lifecycleMappingMetadata>-->
+                                <!--<pluginExecutions>-->
+                                    <!--<pluginExecution>-->
+                                        <!--<pluginExecutionFilter>-->
+                                            <!--<groupId>org.apache.maven.plugins</groupId>-->
+                                            <!--<artifactId>maven-dependency-plugin</artifactId>-->
+                                            <!--<versionRange>[1.0.0,)</versionRange>-->
+                                            <!--<goals>-->
+                                                <!--<goal>copy-dependencies</goal>-->
+                                                <!--<goal>unpack</goal>-->
+                                            <!--</goals>-->
+                                        <!--</pluginExecutionFilter>-->
+                                        <!--<action>-->
+                                            <!--<ignore />-->
+                                        <!--</action>-->
+                                    <!--</pluginExecution>-->
+                                <!--</pluginExecutions>-->
+                            <!--</lifecycleMappingMetadata>-->
+                        <!--</configuration>-->
+                    <!--</plugin>-->
+                <!--</plugins>-->
+            <!--</pluginManagement>-->
+
+
+            <!--&lt;!&ndash; MAVEN工程，编译后配成像普通web工程一样，通过tomcat 相对路径启动 （开发的时候使用） &ndash;&gt;-->
+            <!--<plugins>-->
+                <!--&lt;!&ndash;npm打包&ndash;&gt;-->
+                <!--<plugin>-->
+                    <!--<groupId>org.codehaus.mojo</groupId>-->
+                    <!--<artifactId>exec-maven-plugin</artifactId>-->
+                    <!--<executions>-->
+                        <!--<execution>-->
+                            <!--<id>exec-npm-install</id>-->
+                            <!--<phase>process-resources</phase>-->
+                            <!--<goals>-->
+                                <!--<goal>exec</goal>-->
+                            <!--</goals>-->
+                            <!--<configuration>-->
+                                <!--<executable>cnpm</executable>-->
+                                <!--<arguments>-->
+                                    <!--<argument>install</argument>-->
+                                <!--</arguments>-->
+                                <!--<workingDirectory>${basedir}/src/main/webapp</workingDirectory>-->
+                            <!--</configuration>-->
+                        <!--</execution>-->
+                        <!--<execution>-->
+                            <!--<id>exec-cnpm-install</id>-->
+                            <!--<phase>process-resources</phase>-->
+                            <!--<goals>-->
+                                <!--<goal>exec</goal>-->
+                            <!--</goals>-->
+                            <!--<configuration>-->
+                                <!--<executable>cnpm</executable>-->
+                                <!--<arguments>-->
+                                    <!--<argument>install</argument>-->
+                                    <!--<argument>sass-loader</argument>-->
+                                    <!--<argument>node-sass</argument>-->
+                                    <!--<argument>&#45;&#45;no-save</argument>-->
+                                <!--</arguments>-->
+                                <!--<workingDirectory>${basedir}/src/main/webapp</workingDirectory>-->
+                            <!--</configuration>-->
+                        <!--</execution>-->
+                        <!--<execution>-->
+                            <!--<id>exec-cnpm-run-build</id>-->
+                            <!--<phase>process-resources</phase>-->
+                            <!--<goals>-->
+                                <!--<goal>exec</goal>-->
+                            <!--</goals>-->
+                            <!--<configuration>-->
+                                <!--<executable>cnpm</executable>-->
+                                <!--<arguments>-->
+                                    <!--<argument>run</argument>-->
+                                    <!--<argument>build</argument>-->
+                                <!--</arguments>-->
+                                <!--<workingDirectory>${basedir}/src/main/webapp</workingDirectory>-->
+                            <!--</configuration>-->
+                        <!--</execution>-->
+                    <!--</executions>-->
+                <!--</plugin>-->
+                <!--&lt;!&ndash;copy vue dist目录&ndash;&gt;-->
+                <!--<plugin>-->
+                    <!--<artifactId>maven-antrun-plugin</artifactId>-->
+                    <!--<executions>-->
+                        <!--<execution>-->
+                            <!--<phase>process-resources</phase>-->
+                            <!--<goals>-->
+                                <!--<goal>run</goal>-->
+                            <!--</goals>-->
+                            <!--<configuration>-->
+                                <!--<tasks>-->
+                                    <!--<delete dir="${basedir}/WebContent/WEB-INF/lib/" />-->
+                                    <!--<delete dir="${basedir}/WebContent/WEB-INF/views/dist/" />-->
+                                    <!--<copy todir="${basedir}/WebContent/WEB-INF/views/dist/">-->
+                                        <!--<fileset dir="${basedir}/src/main/webapp/dist/"></fileset>-->
+                                    <!--</copy>-->
+                                <!--</tasks>-->
+                            <!--</configuration>-->
+                        <!--</execution>-->
+                    <!--</executions>-->
+                <!--</plugin>-->
+
+                <!--&lt;!&ndash;删除npm node_modules&ndash;&gt;-->
+                <!--&lt;!&ndash;<plugin>&ndash;&gt;-->
+                <!--&lt;!&ndash;<groupId>org.codehaus.mojo</groupId>&ndash;&gt;-->
+                <!--&lt;!&ndash;<artifactId>exec-maven-plugin</artifactId>&ndash;&gt;-->
+                <!--&lt;!&ndash;<executions>&ndash;&gt;-->
+                <!--&lt;!&ndash;<execution>&ndash;&gt;-->
+                <!--&lt;!&ndash;<id>exec-rm-node-modules</id>&ndash;&gt;-->
+                <!--&lt;!&ndash;<phase>process-resources</phase>&ndash;&gt;-->
+                <!--&lt;!&ndash;<goals>&ndash;&gt;-->
+                <!--&lt;!&ndash;<goal>exec</goal>&ndash;&gt;-->
+                <!--&lt;!&ndash;</goals>&ndash;&gt;-->
+                <!--&lt;!&ndash;<configuration>&ndash;&gt;-->
+                <!--&lt;!&ndash;<executable>rm</executable>&ndash;&gt;-->
+                <!--&lt;!&ndash;<arguments>&ndash;&gt;-->
+                <!--&lt;!&ndash;<argument>-rf</argument>&ndash;&gt;-->
+                <!--&lt;!&ndash;<argument>node_modules</argument>&ndash;&gt;-->
+                <!--&lt;!&ndash;</arguments>&ndash;&gt;-->
+                <!--&lt;!&ndash;<workingDirectory>${basedir}/src/main/webapp</workingDirectory>&ndash;&gt;-->
+                <!--&lt;!&ndash;</configuration>&ndash;&gt;-->
+                <!--&lt;!&ndash;</execution>&ndash;&gt;-->
+                <!--&lt;!&ndash;</executions>&ndash;&gt;-->
+                <!--&lt;!&ndash;</plugin>&ndash;&gt;-->
+
+                <!--<plugin>-->
+                    <!--<groupId>org.apache.maven.plugins</groupId>-->
+                    <!--<artifactId>maven-dependency-plugin</artifactId>-->
+                    <!--<version>2.1</version>-->
+                    <!--<executions>-->
+                        <!--<execution>-->
+                            <!--<id>copy</id>-->
+                            <!--<goals>-->
+                                <!--<goal>copy-dependencies</goal>-->
+                            <!--</goals>-->
+                            <!--<configuration>-->
+                                <!--<outputDirectory>WebContent/WEB-INF/lib</outputDirectory>-->
+                            <!--</configuration>-->
+                        <!--</execution>-->
+                    <!--</executions>-->
+                <!--</plugin>-->
+                <!--<plugin>-->
+                    <!--<artifactId>maven-war-plugin</artifactId>-->
+                    <!--<version>2.3</version>-->
+                    <!--<configuration>-->
+                        <!--<warName>edc-plsqltool-web</warName>-->
+                        <!--<warSourceDirectory>WebContent</warSourceDirectory>-->
+                        <!--<failOnMissingWebXml>false</failOnMissingWebXml>-->
+                    <!--</configuration>-->
+                <!--</plugin>-->
+                <!--<plugin>-->
+                    <!--<groupId>org.apache.maven.plugins</groupId>-->
+                    <!--<artifactId>maven-compiler-plugin</artifactId>-->
+                    <!--<configuration>-->
+                        <!--<source>6</source>-->
+                        <!--<target>6</target>-->
+                    <!--</configuration>-->
+                <!--</plugin>-->
+            <!--</plugins>-->
+
+            <!--<outputDirectory>WebContent/WEB-INF/classes</outputDirectory>-->
+        <!--</build>-->
+
+
+    <!--</project>-->
 </project>
